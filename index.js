@@ -15,3 +15,4 @@ function combineUsers(...args) {
 }
 
 module.exports = combineUsers;
+module.exports.combineUsers = combineUsers;
