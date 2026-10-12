@@ -1,13 +1,12 @@
-require('datejs');
+require("datejs");
 
-function combineUsers(...allUserArrays) {
-
+function combineUsers(...args) {
   const combinedObject = {
-    users: []
+    users: [],
   };
 
-  for (const userArray of allUserArrays) {
-    combinedObject.users = [...combinedObject.users, ...userArray];
+  for (const arr of args) {
+    combinedObject.users = [...combinedObject.users, ...arr];
   }
 
   combinedObject.merge_date = Date.today().toString("M/d/yyyy");
@@ -15,5 +14,4 @@ function combineUsers(...allUserArrays) {
   return combinedObject;
 }
 
-// Export the function using CommonJS syntax to match your test files
-module.exports = { combineUsers };
+module.exports = combineUsers;
